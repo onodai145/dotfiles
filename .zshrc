@@ -127,7 +127,7 @@ alias ping='wincmd /c/Windows/system32/PING.EXE'
 # ------------------------------
 # tmux Settings
 # ------------------------------
-export TMUX_TMPDIR=/var/run/tmux
+export TMUX_TMPDIR=/tmp/tmux
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
