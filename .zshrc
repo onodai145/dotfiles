@@ -113,7 +113,7 @@ alias grep='grep --color=always'
 # ------------------------------
 # tmux Settings
 # ------------------------------
-export TMUX_TMPDIR=/tmp/tmux
+export TMUX_TMPDIR=~/.tmux
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
