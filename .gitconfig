@@ -1,0 +1,5 @@
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
+    path = ~/.config/git/github.com.gitconfig
+
+[includeIf "hasconfig:remote.*.url:https://git.omhnc.net/**"]
+    path = ~/.config/git/git.omhnc.net.gitconfig

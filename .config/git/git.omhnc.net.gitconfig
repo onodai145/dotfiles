@@ -1,0 +1,10 @@
+[user]
+    name = "onodai145"
+    email = "onodai145@noreply.git.omhnc.net"
+    signingkey = 861ABEEB65507E05
+
+[commit]
+    gpgSign = true
+
+[tag]
+    gpgSign = true
