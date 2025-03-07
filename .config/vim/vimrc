@@ -1,29 +1,38 @@
-" if &compatible
-"   set nocompatible
+" " if &compatible
+" "   set nocompatible
+" " endif
+" filetype off
+" " append to runtime path
+" set rtp+=/usr/share/vim/vimfiles
+" " initialize dein, plugins are installed to this directory
+" call dein#begin(expand('~/.cache/dein'))
+" " add packages here, e.g:
+" " call dein#add('qwelyt/TrippingRobot')
+" " call dein#add('altercation/vim-colors-solarized')
+" call dein#add('scrooloose/nerdtree')
+" call dein#add('itchyny/lightline.vim')
+" " call dein#add('vim-airline/vim-airline')
+" call dein#add('ghifarit53/tokyonight-vim')
+" call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+" call dein#add('ryanoasis/vim-devicons')
+" call dein#add('rbtnn/vim-ambiwidth')
+" 
+" " exit dein
+" call dein#end()
+" " auto-install missing packages on startup
+" if dein#check_install()
+"   call dein#install()
 " endif
-filetype off
-" append to runtime path
-set rtp+=/usr/share/vim/vimfiles
-" initialize dein, plugins are installed to this directory
-call dein#begin(expand('~/.cache/dein'))
-" add packages here, e.g:
-" call dein#add('qwelyt/TrippingRobot')
-" call dein#add('altercation/vim-colors-solarized')
-call dein#add('scrooloose/nerdtree')
-call dein#add('itchyny/lightline.vim')
-" call dein#add('vim-airline/vim-airline')
-call dein#add('ghifarit53/tokyonight-vim')
-call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
-call dein#add('ryanoasis/vim-devicons')
-call dein#add('rbtnn/vim-ambiwidth')
+" filetype plugin on
 
-" exit dein
-call dein#end()
-" auto-install missing packages on startup
-if dein#check_install()
-  call dein#install()
-endif
-filetype plugin on
+call plug#begin()
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'rbtnn/vim-ambiwidth'
+call plug#end()
 
 set encoding=utf-8
 set fileencodings=iso-2022-jp,iso-2022-jp-2,utf-8,euc-jp,sjis
