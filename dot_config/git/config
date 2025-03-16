@@ -9,3 +9,5 @@
 	helper = /usr/bin/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[credential "https://git.omhnc.net"]
+	provider = generic
