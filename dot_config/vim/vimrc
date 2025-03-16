@@ -5,6 +5,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rbtnn/vim-ambiwidth'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 set encoding=utf-8
@@ -32,6 +33,10 @@ set ambiwidth=single
 set clipboard+=unnamed
 
 syntax enable
+
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " theme
 set termguicolors
