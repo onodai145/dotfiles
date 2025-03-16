@@ -3,3 +3,9 @@
 
 [includeIf "hasconfig:remote.*.url:https://git.omhnc.net/**"]
     path = ~/.config/git/git.omhnc.net.config
+[credential]
+	credentialStore = secretservice
+	helper = 
+	helper = /usr/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
