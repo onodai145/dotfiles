@@ -1,11 +1,12 @@
 call plug#begin()
-Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 Plug 'rbtnn/vim-ambiwidth'
 Plug 'sheerun/vim-polyglot'
+Plug 'lambdalisue/vim-fern'
+Plug 'lambdalisue/vim-nerdfont'
+Plug 'lambdalisue/vim-glyph-palette'
+Plug 'lambdalisue/vim-fern-renderer-nerdfont'
 call plug#end()
 
 set encoding=utf-8
@@ -51,6 +52,10 @@ let g:lightline = {
       \ 'colorscheme': 'tokyonight',
       \ }
 
-" key mapping
-" nerdtree
-map <C-n> :NERDTreeToggle<CR>
+" fern
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+augroup my-glyph-palette
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+augroup END
+let g:fern#renderer = "nerdfont"
