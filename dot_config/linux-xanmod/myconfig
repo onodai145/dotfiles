@@ -1,0 +1,6 @@
+scripts/config --enable CONFIG_ZSWAP_DEFAULT_ON
+scripts/config --enable CONFIG_TUN
+scripts/config --enable CONFIG_DEBUG_KMEMLEAK
+scripts/config --enable CONFIG_DEBUG_KMEMLEAK_DEFAULT_OFF
+scripts/config --enable SLUB_DEBUG
+scripts/config --enable DMA_API_DEBUG

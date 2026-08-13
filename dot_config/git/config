@@ -11,3 +11,5 @@
 	useHttpPath = true
 [credential "https://git.omhnc.net"]
 	provider = generic
+[init]
+	defaultBranch = main

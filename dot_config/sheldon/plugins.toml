@@ -14,26 +14,50 @@ shell = "zsh"
 
 [plugins]
 
+[plugins.ez-compinit]
+github = "mattmc3/ez-compinit"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+#[plugins.zsh-ssh]
+#local = "~/repos/git.omhnc.net/onodai145/zsh-ssh"
+
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
 [plugins.zsh-starship]
 github = "wintermi/zsh-starship"
 
 [plugins.tmux]
 github = "zpm-zsh/tmux"
 
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
+[plugins.zsh-mise]
+github = "wintermi/zsh-mise"
 
-[plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
+[plugins.fzf-zsh-plugin]
+github = "unixorn/fzf-zsh-plugin"
 
-[plugins.zsh-completions]
-github = "zsh-users/zsh-completions"
+#[plugins.zsh-ssh]
+#github = "sunlei/zsh-ssh"
+
+#[plugins.zsh-ssh-config-suggestions]
+#github = 'yngc0der/zsh-ssh-config-suggestions'
+
+[plugins.zsh-vi-mode]
+github = 'jeffreytse/zsh-vi-mode'
 
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
 
-[plugins.zsh-mise]
-github = "wintermi/zsh-mise"
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+#[plugins.command-not-found]
+#local = "/usr/share/doc/pkgfile/command-not-found.zsh"
 
 [plugins.zsh-myconfig]
 local = "~/.config/zsh"

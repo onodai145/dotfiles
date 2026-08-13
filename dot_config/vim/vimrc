@@ -31,7 +31,8 @@ set smartindent
 set whichwrap=b,s,[,],<,>
 set backspace=indent,eol,start
 set ambiwidth=single
-set clipboard+=unnamed
+" set clipboard+=unnamed
+set clipboard^=unnamedplus
 
 syntax enable
 

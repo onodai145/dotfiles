@@ -1,0 +1,96 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "1",
+        "type": "model",
+        "color": "cyan"
+      },
+      {
+        "id": "25baff48-d8f1-42e6-b4bb-cbb123c6c167",
+        "type": "thinking-effort",
+        "backgroundColor": "bgYellow"
+      },
+      {
+        "id": "d17b3581-675b-4b50-ae13-d93695c0a823",
+        "type": "separator"
+      },
+      {
+        "id": "3",
+        "type": "context-length",
+        "color": "brightBlack"
+      },
+      {
+        "id": "ac188d98-e9cd-44fc-8bdb-3ca362a3e5c6",
+        "type": "context-window"
+      },
+      {
+        "id": "1ab61865-17e6-422a-8acb-25cfebe634b4",
+        "type": "context-percentage-usable"
+      },
+      {
+        "id": "21243a58-3d16-4789-9c0c-710d479720dd",
+        "type": "separator",
+        "character": "|"
+      },
+      {
+        "id": "5",
+        "type": "git-branch",
+        "color": "magenta"
+      },
+      {
+        "id": "7",
+        "type": "git-changes",
+        "color": "yellow"
+      }
+    ],
+    [
+      {
+        "id": "0cc533d0-5274-4957-ba5a-2bbac75a060a",
+        "type": "session-usage"
+      },
+      {
+        "id": "d3825e4a-35fc-4de6-afbe-94fe5f8c6b68",
+        "type": "reset-timer"
+      },
+      {
+        "id": "8a22076e-5f37-47f6-bc8e-b71351364262",
+        "type": "weekly-usage"
+      },
+      {
+        "id": "e509137f-2726-4cef-9a42-13f7ee65213a",
+        "type": "weekly-reset-timer"
+      }
+    ],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "defaultPadding": " ",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [
+      ""
+    ],
+    "theme": "tokyonight",
+    "autoAlign": true,
+    "continueThemeAcrossLines": true
+  },
+  "installation": {
+    "method": "auto-update",
+    "packageManager": "npm"
+  }
+}
