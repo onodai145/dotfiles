@@ -53,7 +53,8 @@
     "superpowers@claude-plugins-official": true,
     "voltagent-lang@voltagent-subagents": true,
     "voltagent-dev-exp@voltagent-subagents": true,
-    "voltagent-qa-sec@voltagent-subagents": true
+    "voltagent-qa-sec@voltagent-subagents": true,
+    "typescript-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "voltagent-subagents": {
