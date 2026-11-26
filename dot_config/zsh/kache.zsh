@@ -1,5 +1,5 @@
 # Cargo needs a Kache executable on PATH to use it as a runner.
-(( $+commands[kache] )) || return 0
+builtin whence -pa kache >/dev/null || return 0
 
 # Cargo test runner
 export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER="${CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER:-kache test-runner}"
