@@ -1,0 +1,14 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- $current := dict -}}
+{{- if trim .chezmoi.stdin -}}
+  {{- $current = mustFromJson .chezmoi.stdin -}}
+{{- end -}}
+{{- $original := mustToJson $current -}}
+{{- range $key, $value := .claudeSettings -}}
+  {{- $_ := set $current $key $value -}}
+{{- end -}}
+{{- if eq (mustToJson $current) $original -}}
+  {{- .chezmoi.stdin -}}
+{{- else -}}
+  {{- mustToPrettyJson $current }}{{ "\n" -}}
+{{- end -}}

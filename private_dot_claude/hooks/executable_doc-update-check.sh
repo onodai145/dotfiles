@@ -16,7 +16,24 @@ fi
 repo_root=$(git rev-parse --show-toplevel)
 cd "$repo_root"
 
-changed=$(git status --porcelain | awk '{print $2}')
+# Working-tree-only status misses everything already committed this session (a
+# commit-per-turn workflow leaves git status clean at every Stop, so a whole
+# branch of code-only commits could sail through with zero doc changes ever
+# flagged). Union the branch's cumulative diff since it forked from the default
+# branch with any still-uncommitted changes, so committing doesn't erase the signal.
+default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+default_branch="${default_branch:-main}"
+current_branch=$(git branch --show-current)
+
+committed=""
+if [ -n "$current_branch" ] && [ "$current_branch" != "$default_branch" ]; then
+  merge_base=$(git merge-base "$default_branch" HEAD 2>/dev/null || git merge-base "origin/$default_branch" HEAD 2>/dev/null || true)
+  if [ -n "$merge_base" ]; then
+    committed=$(git diff --name-only "$merge_base"...HEAD)
+  fi
+fi
+uncommitted=$(git status --porcelain | awk '{print $2}')
+changed=$(printf '%s\n%s\n' "$committed" "$uncommitted" | sed '/^$/d' | sort -u)
 if [ -z "$changed" ]; then
   exit 0
 fi

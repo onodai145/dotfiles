@@ -89,6 +89,7 @@ hl.env("XCURSOR_THEME", "hinano")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "hinano")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XKB_DEFAULT_LAYOUT", "jp")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -377,6 +378,7 @@ hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("wlogout"))
 -- hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("rofi -show window"))
 
 hl.bind(
@@ -387,6 +389,18 @@ hl.bind(
 hl.bind(
     "SHIFT + Print",
     hl.dsp.exec_cmd([[grim - | satty --filename -]])
+)
+
+hl.bind(
+    "ALT + Print",
+    hl.dsp.exec_cmd([[
+        grim -g "$(
+            hyprctl activewindow |
+            awk '/at:/ {gsub(/[(),]/, " "); x=$2; y=$3}
+                 /size:/ {gsub(/[(),]/, " "); w=$2; h=$3}
+                 END {print x "," y " " w "x" h}'
+        )" - | satty --filename -
+    ]])
 )
 
 hl.bind(

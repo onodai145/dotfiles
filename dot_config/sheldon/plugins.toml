@@ -59,6 +59,9 @@ github = "zsh-users/zsh-syntax-highlighting"
 #[plugins.command-not-found]
 #local = "/usr/share/doc/pkgfile/command-not-found.zsh"
 
+[plugins.tmux-ssh-syncing]
+github = "alberti42/tmux-ssh-syncing"
+
 [plugins.zsh-myconfig]
 local = "~/.config/zsh"
 

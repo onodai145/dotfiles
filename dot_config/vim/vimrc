@@ -33,17 +33,18 @@ set backspace=indent,eol,start
 set ambiwidth=single
 " set clipboard+=unnamed
 set clipboard^=unnamedplus
+set mouse=a
 
 syntax enable
 
 if !has('gui_running')
-  set t_Co=256
+  " set t_Co=256
+  set termguicolors
+  let g:tokyonight_transparent_background = 1
 endif
 
 " theme
-set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_transparent_background = 1
 colorscheme tokyonight
 
 " lightline

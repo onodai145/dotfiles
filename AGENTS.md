@@ -15,7 +15,7 @@ Chezmoi encodes target behavior in the source filename:
 - `executable_` prefix → target gets the executable bit (used for the hook scripts under `private_dot_claude/hooks/`)
 - Nested `dot_config/<tool>/...` mirrors `~/.config/<tool>/...` exactly
 
-When adding a new dotfile, mirror the target's path/permission needs using these prefixes rather than `chmod`-ing after the fact. There are currently no `.tmpl` templates or a `.chezmoi.toml.tmpl` in this repo — everything is applied as static content — so don't introduce templating unless it's actually needed.
+When adding a new dotfile, mirror the target's path and permission needs using these prefixes. Prefer static content where it covers the target configuration.
 
 ## Common commands
 
@@ -37,9 +37,9 @@ There is no build/lint/test suite — changes are validated by running `chezmoi 
 - `dot_config/git/config` uses `includeIf` to load host-specific git identity/config from `dot_config/git/github.com.config` and `dot_config/git/git.omhnc.net.config` based on the remote URL — keep per-host credentials/identity in those included files, not the main `config`.
 - `private_dot_claude/` — the user's global Claude Code config, tracked here so it's synced across machines:
   - `CLAUDE.md` → deploys to `~/.claude/CLAUDE.md` (global instructions for *all* projects — the user is a security engineer/researcher, runs a homelab, prefers official docs over guesses, and wants Japanese for conversation/explanations)
-  - `rules/workflow.md` → global git workflow rules (never commit to main/master, branch before editing, never bypass commit signing/hooks, subject-line-only commit messages)
+  - `hooks/executable_check-branch.sh` and `hooks/executable_git-policy.sh` → `PreToolUse` hooks registered for `Edit|Write` and `Bash`, respectively
   - `hooks/executable_doc-update-check.sh` — `Stop` hook: blocks ending a turn if source files changed without any accompanying doc change (AGENTS.md/CLAUDE.md/README/docs/CHANGELOG), once per distinct diff per session
   - `hooks/executable_superpowers-reminder.sh` — `UserPromptSubmit` hook: re-injects the reminder to check for applicable Superpowers skills before responding
-  - `settings.json` — model/effort defaults, enabled plugins (superpowers, code-review, frontend-design, voltagent subagent packs, etc.) and notification/status-line setup
+  - `modify_settings.json` → deploys to `~/.claude/settings.json` and updates the top-level keys defined in `.chezmoidata/claude.json`. Keep machine-specific settings such as `autoMode` in the home file.
 
 Because `private_dot_claude/*` *is* the global Claude Code config, editing it changes Claude Code's own behavior across every other repo the user works in — review changes here for their impact on Claude Code across projects.
