@@ -38,8 +38,8 @@ github = "wintermi/zsh-mise"
 [plugins.fzf-zsh-plugin]
 github = "unixorn/fzf-zsh-plugin"
 
-#[plugins.zsh-ssh]
-#github = "sunlei/zsh-ssh"
+[plugins.zsh-ssh]
+github = "sunlei/zsh-ssh"
 
 #[plugins.zsh-ssh-config-suggestions]
 #github = 'yngc0der/zsh-ssh-config-suggestions'
